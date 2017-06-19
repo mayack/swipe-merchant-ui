@@ -1,0 +1,29 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Library';
+  - var pageClass = 'library';
+
+block content
+  h2 UI Library
+  .s-lister-spacing--l
+    section
+      h3 Buttons
+      .s-items-spacingVertical--s
+        .s-items-spacing--s
+          button.s-button Default Button
+          button.s-button.s-swatch-stone Stone Button
+          button.s-button.s-swatch-silver Silver Button
+          button.s-button.s-swatch-aqua Aqua Button
+        .s-items-spacing--s
+          button.s-button.s-border-outline.s-swatch-aqua Outline Aqua Button
+          button.s-button.s-border-outline.s-swatch-silver Outline Silver Button
+    section
+      h3 Loaders
+      h4 Loader in a button
+      button.s-button.loadMe Loading...
+      h4 Loader in a box
+      .s-box.loadMe Loading...
+      h4 Loader as an overlay
+      button#buttonOverlayTrigger.s-button Show Overlay
+

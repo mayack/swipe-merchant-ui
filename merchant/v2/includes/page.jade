@@ -1,0 +1,35 @@
+block page
+  - var pageClass = 'timeline'; //default
+
+doctype html
+<!--[if lt IE 7]<html lang="en" class="oldie lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="en" class="oldie lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="oldie lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+html
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    <!--[if IE]><!-->
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    <!--<![endif]-->
+    meta(name='description', content='')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Swipe Gateway / Merchant v2.0
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet")
+    link(rel='stylesheet', href='css/merchant.css')
+  body.sidebarRightVisible(class='page-#{pageClass}')
+    include socials
+    .s-layout
+      .s-layoutRow.s-layoutExpand
+        .s-layout.s-layoutCell
+          include sidebar-left
+          .s-layoutColumn.s-layoutExpand
+            main.s-padding-top.s-padding-bottom
+              .s-wrapper
+                block page
+                block content
+          include sidebar-right
+    include feedbackBubbles
+    include scripts
+    include timeline-filters

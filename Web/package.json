@@ -1,0 +1,149 @@
+{
+  "name": "swipe-gateway-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SwipeGateway Single Page Application.",
+  "main": "index.js",
+  "scripts": {
+    "prestarter-global": "echo Installing required global packages...",
+    "starter-global": "npm install gulp-cli@latest jspm@latest -g",
+    "starter-all": "npm run starter-global && npm run starter",
+    "prestarter": "echo Preparing project...",
+    "starter": "npm install && jspm install",
+    "pretslint-test": "echo Starting TsLint test...",
+    "tslint-test": "tslint --config ./tslint.json --project . --exclude wwwroot/**/* && echo TsLint test successfully passed.",
+    "prets-build-test": "echo Starting Typescript test...",
+    "ts-build-test": "tsc -p . --listFiles --noEmit && echo Typescript test successfully passed.",
+    "test": "npm run ts-build-test && npm run tslint-test && echo All tests successfully passed."
+  },
+  "keywords": [
+    "Swipe",
+    "Gateway",
+    "Single",
+    "Page",
+    "Application",
+    "SPA"
+  ],
+  "author": "QuatroDev <info@quatrodev.com> (https://quatrodev.com)",
+  "license": "",
+  "devDependencies": {
+    "@types/flux": "^3.1.0",
+    "jspm": "^0.17.0-beta.41",
+    "simplr-gulp": "^2.8.2",
+    "tslint": "^5.3.2",
+    "typescript": "^2.3.3"
+  },
+  "dependencies": {
+    "@types/classnames": "^2.2.0",
+    "@types/node": "^7.0.22",
+    "@types/prop-types": "^15.5.1",
+    "@types/react": "^15.0.29",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-router": "^4.0.10",
+    "@types/react-router-dom": "^4.0.4",
+    "@types/systemjs": "^0.20.2",
+    "action-emitter": "^0.2.1",
+    "immutable": "^3.8.1",
+    "moment": "^2.18.1",
+    "react-day-picker": "^5.5.3",
+    "simplr-dropdown": "^2.2.3",
+    "simplr-flux": "^2.0.1",
+    "simplr-forms": "^4.0.1-beta.4",
+    "simplr-forms-dom": "^4.0.1-beta.4",
+    "tslib": "^1.7.1"
+  },
+  "jspm": {
+    "name": "swipe-gateway-web",
+    "main": "app/app-starter.js",
+    "directories": {
+      "packages": "wwwroot/libs",
+      "baseURL": "wwwroot"
+    },
+    "configFiles": {
+      "jspm": "src/configs/jspm.config.js"
+    },
+    "dependencies": {
+      "action-emitter": "npm:action-emitter@^0.2.1",
+      "classnames": "npm:classnames@^2.2.5",
+      "flux": "npm:flux@^3.1.2",
+      "history": "npm:history@^4.6.1",
+      "moment-range": "npm:moment-range@^3.0.3",
+      "prop-types": "npm:prop-types@^15.5.10",
+      "react-day-picker": "npm:react-day-picker@^5.5.3",
+      "react-router": "npm:react-router@^4.1.1",
+      "react-router-dom": "npm:react-router-dom@^4.1.1",
+      "simplr-dropdown": "npm:simplr-dropdown@^2.2.3",
+      "simplr-flux": "npm:simplr-flux@^2.0.1",
+      "simplr-forms": "npm:simplr-forms@^4.0.1-beta.4",
+      "simplr-forms-dom": "npm:simplr-forms-dom@^4.0.1-beta.4",
+      "tslib": "npm:tslib@^1.7.1"
+    },
+    "devDependencies": {},
+    "peerDependencies": {
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
+      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "css": "npm:systemjs-plugin-css@^0.1.35",
+      "domain": "npm:jspm-nodelibs-domain@^0.2.0",
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "http": "npm:jspm-nodelibs-http@^0.2.0",
+      "https": "npm:jspm-nodelibs-https@^0.2.0",
+      "immutable": "npm:immutable@^3.8.1",
+      "moment": "npm:moment@^2.18.1",
+      "net": "npm:jspm-nodelibs-net@^0.2.0",
+      "os": "npm:jspm-nodelibs-os@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "react": "npm:react@^15.6.1",
+      "react-dom": "npm:react-dom@^15.5.4",
+      "readline": "npm:jspm-nodelibs-readline@^0.2.0",
+      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
+      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
+      "tls": "npm:jspm-nodelibs-tls@^0.2.0",
+      "tty": "npm:jspm-nodelibs-tty@^0.2.0",
+      "url": "npm:jspm-nodelibs-url@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0",
+      "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
+    },
+    "overrides": {
+      "npm:browserify-zlib@0.1.4": {
+        "dependencies": {
+          "readable-stream": "^2.0.2",
+          "pako": "~0.2.0"
+        },
+        "map": {
+          "_stream_transform": "readable-stream/transform"
+        }
+      },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:moment@2.18.1": {
+        "jspmNodeConversion": false
+      },
+      "npm:pbkdf2@3.0.12": {
+        "main": "browser.js"
+      },
+      "npm:safe-buffer@5.0.1": {
+        "browser": "index.js"
+      },
+      "npm:safe-buffer@5.1.0": {
+        "browser": "index.js"
+      },
+      "npm:tslib@1.7.1": {
+        "format": "cjs",
+        "meta": {
+          "tslib.js": {
+            "esModule": true
+          }
+        }
+      }
+    }
+  }
+}

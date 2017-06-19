@@ -1,0 +1,106 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Edit webhook';
+  - var pageClass = 'api';
+
+block content
+  header.s-cells-spacing--s.s-margin-bottom
+    .s-cell
+      a.icon-angle-left.s-text-size--3xl(href='api')
+    .s-cell.s-text-nowrap-size--3xl
+      = pageTitle
+    .s-cell.s-expand.s-align-right
+  .s-box.s-padding--l.s-margin-bottom
+    .s-items-spacingVertical--s
+      .s-margin-bottom
+        label.s-text-semibold.s-margin-bottom--xs.s-block URL to be called
+        input.s-expand(type='text')
+      .s-cells-justified
+        .s-cell.s-align-top
+          label.s-text-semibold.s-margin-bottom--xs.s-block Events to send
+          .s-items-spacingVertical--xs
+            .s-cells-spacing--xs
+              .s-cell
+                span.s-radiobox.s-text-size--xxl
+                  input(type='radio' id='radiobox-1' name='radioboxes-1')
+                  label(for='radiobox-1')
+              .s-cell.s-expand
+                label(for='radiobox-1') Live events
+            .s-cells-spacing--xs
+              .s-cell
+                span.s-radiobox.s-text-size--xxl
+                  input(type='radio' id='radiobox-2' name='radioboxes-1')
+                  label(for='radiobox-2')
+              .s-cell.s-expand
+                label(for='radiobox-2') Test events
+        .s-cell.s-align-top
+          label.s-text-semibold.s-margin-bottom--xs.s-block Filter event
+          .s-items-spacingVertical--xs
+            .s-cells-spacing--xs
+              .s-cell
+                span.s-radiobox.s-text-size--xxl
+                  input(type='radio' id='radiobox-3' name='radioboxes-2')
+                  label(for='radiobox-3')
+              .s-cell.s-expand
+                label(for='radiobox-3') Live events
+            .s-cells-spacing--xs
+              .s-cell
+                span.s-radiobox.s-text-size--xxl
+                  input(type='radio' id='radiobox-4' name='radioboxes-2')
+                  label(for='radiobox-4')
+              .s-cell.s-expand
+                label(for='radiobox-4') Test events
+    hr
+    .s-cells-justified
+      .s-cell.s-align-top
+        .s-items-spacingVertical--xs
+          .s-cells-spacing--xs
+            .s-cell
+              span.s-checkbox.s-text-size--xxl
+                input(type='checkbox' id='checkbox-1' name='checkboxes-1')
+                label(for='checkbox-1')
+            .s-cell.s-expand
+              label(for='checkbox-1') Payment created
+          .s-cells-spacing--xs
+            .s-cell
+              span.s-checkbox.s-text-size--xxl
+                input(type='checkbox' id='checkbox-2' name='checkboxes-1')
+                label(for='checkbox-2')
+            .s-cell.s-expand
+              label(for='checkbox-2') Payment mode
+          .s-cells-spacing--xs
+            .s-cell
+              span.s-checkbox.s-text-size--xxl
+                input(type='checkbox' id='checkbox-3' name='checkboxes-1')
+                label(for='checkbox-3')
+            .s-cell.s-expand
+              label(for='checkbox-3') Payment failed
+      .s-cell.s-align-top
+        .s-items-spacingVertical--xs
+          .s-cells-spacing--xs
+            .s-cell
+              span.s-checkbox.s-text-size--xxl
+                input(type='checkbox' id='checkbox-4' name='checkboxes-1')
+                label(for='checkbox-4')
+            .s-cell.s-expand
+              label(for='checkbox-4') Transfer withdrawn
+          .s-cells-spacing--xs
+            .s-cell
+              span.s-checkbox.s-text-size--xxl
+                input(type='checkbox' id='checkbox-5' name='checkboxes-1')
+                label(for='checkbox-5')
+            .s-cell.s-expand
+              label(for='checkbox-5') Invoice is overdue
+  footer.formFooter.s-swatch-stone.s-border-top-static
+    .s-wrapper
+      .s-cells
+        .s-cell.s-text-nowrap.s-text-size--l.s-expand
+          a.s-cells-spacing--xs.s-comment.s-width-auto(href='javascript:void(0)')
+            span.s-cell #[span.icon-trash.s-text-size--l]
+            span.s-cell.s-text-semibold-size--xs-caps.s-expand Delete Webhook
+        .s-cell.s-text-nowrap
+          nav.s-text-nowrap.s-items-spacing--xs
+            a.s-button.s-swatch-stone(href='javascript:void(0)') Cancel
+            a.s-button.s-swatch-aqua(href='javascript:void(0)') Save Changes
+  .formFooterGap

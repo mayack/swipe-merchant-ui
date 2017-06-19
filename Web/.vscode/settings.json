@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "files.exclude": {
+        "**/.vs": true,
+        "**/.vscode": true,
+        "**/node_modules": true,
+        "**/wwwroot": true
+    },
+    "files.insertFinalNewline": true,
+    // For "Beautify css/sass/scss/less" plugin
+    "beautify.options": {
+        "end_with_newline": true,
+        "preserve_newlines": true
+    },
+    "tslint.alwaysShowRuleFailuresAsWarnings": true
+}

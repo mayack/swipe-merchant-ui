@@ -1,0 +1,56 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Accounts';
+  - var pageClass = 'accounts';
+
+block content
+  header.s-cells.s-margin-bottom
+    .s-cell.s-expand
+      .s-items-spacing--s
+        a.s-button.s-swatch-aqua(href='accounts-edit') #[span.icon-plus.s-margin-right--xs]Add Account
+    .s-cell.s-align-right
+  .s-items-spacingVertical--xs
+    .s-box.s-border-active.s-padding--none.s-padding-left.s-padding-right--none.s-cells-spacing
+      .s-cell.s-expand
+        .s-cells-spacing
+          .s-cell.s-padding-left
+            span.icon-circle-ok.s-text-size--xxl.s-swatch-aqua--text
+          .s-cell.s-expand
+            a.s-text-semibold(href='javascript:void(0)') jevgenijs.novickis@gmail.com
+            .s-comment.s-text-size--s Manager
+      .s-cell
+        a.s-button-spacing--xs(href='javascript:void(0)') Manage Users, Edit, Collaborate#[span.icon-angle-bottom.s-margin-left--xs.s-comment]
+      .s-cell.s-items-spacing--s.s-text-size--l-nowrap
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+      .s-cell
+        a.icon-angle-right.s-text-size--3xl.s-padding--s.s-swatch-aqua.s-block.s-shape-rounded-right(href='javascript:void(0)')
+    .s-box.s-border-active.s-padding--none.s-padding-left.s-padding-right--none.s-cells-spacing
+      .s-cell.s-expand
+        .s-cells-spacing
+          .s-cell.s-padding-left
+            span.icon-circle-ok.s-text-size--xxl.s-swatch-aqua--text
+          .s-cell.s-expand
+            a.s-text-semibold(href='javascript:void(0)') jevgenijs.novickis@gmail.com
+            .s-comment.s-text-size--s Manager
+      .s-cell
+        a.s-button-spacing--xs(href='javascript:void(0)') Manage Users, Edit, Collaborate#[span.icon-angle-bottom.s-margin-left--xs.s-comment]
+      .s-cell.s-items-spacing--s.s-text-size--l-nowrap
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+      .s-cell
+        a.icon-angle-right.s-text-size--3xl.s-padding--s.s-swatch-aqua.s-block.s-shape-rounded-right(href='javascript:void(0)')
+    .s-box.s-border-active.s-padding--none.s-padding-left.s-padding-right--none.s-cells-spacing
+      .s-cell.s-expand
+        .s-cells-spacing
+          .s-cell.s-padding-left
+            span.icon-circle-ok.s-text-size--xxl.s-swatch-aqua--text
+          .s-cell.s-expand
+            a.s-text-semibold(href='javascript:void(0)') jevgenijs.novickis@gmail.com
+            .s-comment.s-text-size--s Manager
+      .s-cell
+        a.s-button-spacing--xs(href='javascript:void(0)') Manage Users, Edit, Collaborate#[span.icon-angle-bottom.s-margin-left--xs.s-comment]
+      .s-cell.s-items-spacing--s.s-text-size--l-nowrap
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+      .s-cell
+        a.icon-angle-right.s-text-size--3xl.s-padding--s.s-swatch-aqua.s-block.s-shape-rounded-right(href='javascript:void(0)')
+  include includes/row-actions

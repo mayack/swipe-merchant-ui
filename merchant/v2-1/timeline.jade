@@ -1,0 +1,44 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Timeline';
+  - var pageClass = 'timeline';
+
+block content
+  header.s-cells.s-margin-bottom.s-border-bottom-static.s-padding-bottom
+    .s-cell.s-expand
+      .s-items-spacing--l
+        a.s-text-size--l(href='javascript:void(0)' data-popover='timelineFilter' data-popover-position='left') #[span.icon-controls.s-margin-right--xs]Filtrēt
+        a.s-text-size--l(href='javascript:void(0)' data-popover='timelineExport') #[span.icon-download.s-margin-right--xs]Lejupielādēt atskaiti
+    .s-cell.s-align-right.s-text-nowrap
+      #timelineRange.s-popover-top-right.popoverFloat.s-box.s-padding--none.s-border-overlay
+        .s-popoverArrow
+        .s-cells
+          .s-cell.s-align-top
+            #timelineRangeCalendar.s-hide
+          .s-cell
+            ul.s-lister-spacing--none.s-list-nobullets.s-shape-rounded.s-overflow.s-text-nowrap
+              li
+                a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') This week
+              li
+                a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') Last 7 days
+              li
+                a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') Last week
+              li
+                a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') This month
+              li
+                a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') Last month
+              li
+                a#timelineRangeCustom.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href='#') Custom
+      #timelineRangeInput.s-inputIcon-right
+        input(name='startDate' placeholder='Select time period' data-popover='timelineRange' data-popover-offset-x='10' data-popover-offset-y='-1' data-popover-position='right')
+        span.icon-calendar.s-comment
+  a.newItems.s-effect-info.s-box.s-text-semibold-size--s-caps.s-block.s-padding--xs.s-align-center.s-margin-bottom--s(href='javascript:void(0)') View 10 new transactions
+  .fancyLister.s-lister-spacing--s
+    include includes/timeline-rows
+    include includes/timeline-rows
+    include includes/timeline-rows
+  .loadMe.s-margin-top--s
+  include includes/row-actions
+  include includes/tooltip-pending
+  include includes/timeline-filters

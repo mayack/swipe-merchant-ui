@@ -1,0 +1,71 @@
+block page
+  - var pageClass = 'timeline'; //default
+
+doctype html
+<!--[if lt IE 7]<html lang="en" class="oldie lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="en" class="oldie lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="oldie lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+html
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    <!--[if IE]><!-->
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    <!--<![endif]-->
+    meta(name='description', content='')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Swipe Gateway / Merchant v2.0
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet")
+    link(rel='stylesheet', href='css/daterangepicker.css')
+    link(rel='stylesheet', href='css/merchant.css')
+  body.sidebarRightVisible(class='page-#{pageClass}')
+    include socials
+    .s-layout
+      .s-layoutRow.s-layoutExpand
+        .s-layout.s-layoutCell
+          include sidebar-left
+          .s-layoutColumn.s-layoutExpand
+            header#header.s-swatch-default.s-border-bottom-static.barWidth
+              .s-cells.s-padding-left.s-padding-right
+                .s-cell.s-expand
+                  .smartSearch.s-cells-spacing--s
+                    .s-cell.s-text-size--xl
+                      a.icon-search.s-padding--xs.s-text-baseline--single.s-shape-circle.s-swatch-default(href='javascript:void(0)')
+                    .s-cell.s-text-size--l.s-expand
+                      input(placeholder='Search invoices, clients, products...')
+                .s-cell.s-text-nowrap.s-text-size--xl.s-items-spacing--xs
+                  a.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle.icon-bell.new(href='javascript:void(0)' data-tooltip='Notifications' data-popover='notificationCenter')
+                  a.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle.icon-gear(href='javascript:void(0)' data-tooltip='Settings')
+                  a.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle.icon-logout(href='javascript:void(0)' data-tooltip='Log out')
+            main#content.s-padding-top--l.s-padding-bottom--l
+              .s-wrapper
+                block page
+                block content
+          include sidebar-right
+    .smartSearchOverlay.s-swatch-coal.barWidth
+      .s-wrapper.s-padding-top--l.s-padding-bottom--l
+        .smartSearchContent.s-items-spacingVertical--l
+          section.s-items-spacingVertical--xs
+            h5 Invoices
+            include smart-search-invoice
+            include smart-search-invoice
+            include smart-search-invoice
+            include smart-search-invoice
+            include smart-search-invoice
+          section.s-items-spacingVertical--xs
+            h5 Clients
+            include smart-search-client
+            include smart-search-client
+            include smart-search-client
+            include smart-search-client
+            include smart-search-client
+          //- Only for the demonstrational purposes
+          button(onclick='$(this).parent().hide();$(this).parent().next().fadeIn(300);') Show no results
+        .smartSearchContent.smartSearchEmpty.s-align-center(style='display:none')
+          .icon-search.s-text-size--9xl.s-margin-bottom--xs
+          .s-text-size--xl-caps-semibold Sorry, nothing found
+        .loadMe.s-text-size--3xl
+    include notification-center
+    include feedbackBubbles
+    include scripts

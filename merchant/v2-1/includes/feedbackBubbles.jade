@@ -1,0 +1,79 @@
+.feedbackBubbles.s-text-baseline--single
+  a#feedbackMsgTrigger.feedbackBubblesMain.s-button.s-swatch-silver.icon-mail.s-text-size--5xl.s-shape-circle.s-padding--xs(href='javascript:void(0)')
+  .feedbackBubblesTiny.s-filler.s-text-size--xxl
+    a#feedbackCallTrigger.s-swatch-silver.icon-phone-2.s-shape-circle.s-button.tempTooltip.s-padding--xs(href='javascript:void(0)')
+    a#feedbackMsgTrigger.s-swatch-silver.icon-mail.s-shape-circle.s-button.tempTooltip.s-padding--xs(href='javascript:void(0)')
+    a#feedbackSocialsTrigger.s-swatch-silver.icon-megaphone.s-shape-circle.s-button.tempTooltip.s-padding--xs(href='javascript:void(0)')
+#feedbackMsg(style='display:none')
+  form
+    h3.s-margin-bottom--l #[span.icon-mail.s-swatch-aqua--text.s-margin-right--s]Send us a message
+    fieldset.s-margin-bottom.s-items-spacingVertical
+      .s-cells-spacing--s-justified
+        .s-cell
+          label.s-text-semibold.s-margin-bottom--xs.s-block Subject
+          input.s-expand(type='text')
+        .s-cell
+          label.s-text-semibold.s-margin-bottom--xs.s-block Your email
+          input.s-expand(type='text')
+      div
+        label.s-text-semibold.s-margin-bottom--xs.s-block Message
+        textarea.s-expand(rows='4')
+    footer.s-items-spacing--s.s-text-size--l.s-align-left
+      button.s-button.s-swatch-aqua Send
+      a.s-inputPadding(href='javascript:void(0)') No, thanks
+#feedbackCall(style='display:none')
+  form
+    h3.s-margin-bottom--l #[span.icon-phone-2.s-swatch-aqua--text.s-margin-right--s]Set up a call
+    fieldset.s-margin-bottom.s-items-spacingVertical
+      .s-cells-spacing--s-justified
+        .s-cell
+          .s-cells-spacing--xs
+            .s-cell
+              label.s-text-semibold.s-margin-bottom--xs.s-block Title
+              select.fieldTitle
+                option Mr.
+                option Mrs.
+                option Dr.     
+            .s-cell
+              label.s-text-semibold.s-margin-bottom--xs.s-block First Name
+              input.s-expand(type='text')
+        .s-cell
+          label.s-text-semibold.s-margin-bottom--xs.s-block Last Name
+          input.s-expand(type='text')
+      .s-cells-spacing--s-justified
+        .s-cell
+          label.s-text-semibold.s-margin-bottom--xs.s-block Phone Number
+          .fieldPhone.s-cells
+            .s-cell
+              select
+                include area-codes
+            .s-cell.s-expand
+              input.s-expand(type='tel')
+        .s-cell
+          label.s-text-semibold.s-margin-bottom--xs.s-block Date &amp; Time
+          .s-inputIcon-right.s-expand
+            input.s-expand(type='text')
+            a.icon-calendar.s-comment(href='javascript:void(0)')
+    footer.s-items-spacing--s.s-text-size--l.s-align-left
+      button.s-button.s-swatch-aqua Arrange a Call
+      a.s-inputPadding(href='javascript:void(0)') No, thanks
+#feedbackSocials(style='display:none')
+  h3.s-margin-bottom--l #[span.icon-megaphone.s-swatch-aqua--text.s-margin-right--s]Follow us
+  p.s-text-size--l Stay tuned about new Swipe feautures and payements trends!
+  .s-cells-spacing--s-justified
+    .s-cell
+      .s-box.s-align-center
+        h4.s-margin-bottom Facebook
+        span.s-shape-circle.fill-facebook.s-padding--s.s-text-size--4xl-baseline--single.icon-facebook.s-border-outline.s-inline-blocks.s-margin-bottom
+        .fb-like(data-href='https://developers.facebook.com/docs/plugins/', data-layout='button_count', data-action='like', data-size='large', data-show-faces='false', data-share='false')
+    .s-cell
+      .s-box.s-align-center
+        h4.s-margin-bottom Twitter
+        span.s-shape-circle.fill-twitter.s-padding--s.s-text-size--4xl-baseline--single.icon-twitter.s-border-outline.s-inline-block.s-margin-bottom
+        a.twitter-follow-button(href='https://twitter.com/TwitterDev', data-show-screen-name='false', data-show-count='false', data-size='large')
+          | Follow @TwitterDev
+    .s-cell
+      .s-box.s-align-center
+        h4.s-margin-bottom Our blog
+        span.s-shape-circle.s-swatch-aqua.s-padding--s.s-text-size--4xl-baseline--single.icon-chat-2.s-border-outline.s-inline-block.s-margin-bottom
+        a.s-button-spacing--xs.s-swatch-aqua(href='javascript:void(0)') Subscribe

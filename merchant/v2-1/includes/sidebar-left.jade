@@ -1,0 +1,92 @@
+block page
+  - var pageClass = 'timeline'; //default
+
+-
+  var navItems = [
+    {label: 'Timeline', value: 'timeline', icon:  'timeline'},
+    {label: 'Invoices', value: 'invoices', icon:  'file'},
+    {label: 'Subscriptions', value: 'subscriptions', icon:  'refresh'},
+    {label: 'E-commerce & API', value: 'api', icon:  'api'},
+    {label: 'Accounts', value: 'accounts', icon:  'circle-warning'},
+    {label: 'Clients', value: 'clients', icon:  'user'},
+    {label: 'Products', value: 'products', icon:  'box'},
+    {label: 'UI Library', value: 'library', icon:  'asterisk'}
+  ]
+- var i = 0;
+- var random = Math.round(16 + 23*Math.random());
+
+
+#sidebarLeft.s-layoutColumn
+  aside.s-swatch-stone.s-border-right-static
+    header
+      a#sidebarLeftLogo.s-align-center.s-text-font--clear.s-block.s-padding.s-padding-bottom--xs(href='javascript:void(0)')
+        img(src='images/logo-aqua.svg' width='80')
+      .companySwitcher
+        .companySwitcherActive.s-padding.s-padding-top--s.s-padding-bottom--s.s-cells-spacing--s.s-border-bottom-static.s-swatch-stone
+          .s-cell.s-text-baseline--single
+            figure.s-margin--none.s-text-font--clear.s-relative
+              img.s-shape-circle(src='temp/icon-qfer.png' width='36' height='36')
+          .s-cell.s-expand
+            h5.s-margin-bottom--none.s-text-baseline--default Qfer Ltd.
+            .s-comment Balance: 2,000.59 €
+          .s-cell
+            span.icon-angle-bottom.s-text-size--l
+        ul.s-list-nobullets.s-swatch-stone
+          li.s-swatch-stone.s-padding.s-padding-top--s.s-padding-bottom--s.s-cells-spacing--s.s-border-bottom-static
+            .s-cell.s-text-baseline--single.s-relative
+              figure.s-margin--none.s-text-font--clear.s-relative
+                img.s-shape-circle(src='temp/icon-bucket.png' width='36' height='36')
+                span.icon-warning-thick.s-swatch-aqua.s-shape-circle.s-text-font--reset-size--stone-size--xs
+            .s-cell.s-expand
+              h5.s-margin-bottom--none.s-text-baseline--default Mayack Designs
+              a(href='javascript:void(0)') Verify company&nbsp;#[span.icon-angle-right]
+          li.s-swatch-stone.s-padding.s-padding-top--s.s-padding-bottom--s.s-cells-spacing--s.s-border-bottom-disabled
+            .s-cell.s-text-baseline--single
+              figure.s-margin--none.s-text-font--clear.s-relative
+                img.s-shape-circle(src='temp/icon-rocket.png' width='36' height='36')
+            .s-cell.s-expand
+              h5.s-margin-bottom--none.s-text-baseline--default Stark Industries Inc.
+              .s-comment Balance: 49,578.23 €
+          li.s-swatch-stone.s-border-bottom-static
+            a.s-padding.s-padding-top--s.s-padding-bottom--s.s-block.s-align-center(href='javascript:void(0)') #[span.icon-plus.s-margin-right--xs]Add a company
+        .companySwitcherOverlay
+    nav#sidebarLeftNav.s-padding-top--s.s-padding-bottom--s
+      ul.s-menu-vertical.s-text-semibold
+        for navItem in navItems
+          if pageClass === navItem.value
+            li.s-padding-right--s.active
+              a.s-padding--xs.s-padding-left.s-comment.s-cells.s-expand(href=navItem.value)
+                .s-cell.s-expand
+                  .s-cells-spacing--s
+                    .s-cell
+                      span.s-swatch-aqua--text.s-text-size--l(class='icon-' + navItem.icon)
+                    .s-cell.s-expand
+                      = navItem.label
+                .s-cell.s-align-right.s-text-size--xs #[span.s-label= random * i++ + 2]
+          else
+            li.s-padding-right--s
+              a.s-padding--xs.s-padding-left.s-comment.s-cells.s-expand(href=navItem.value)
+                .s-cell.s-expand
+                  .s-cells-spacing--s
+                    .s-cell
+                      span.s-swatch-aqua--text.s-text-size--l(class='icon-' + navItem.icon)
+                    .s-cell.s-expand
+                      = navItem.label
+                .s-cell.s-align-right.s-text-size--xs #[span.s-label= random * i++ + 3]
+    footer.s-align-center.s-padding.s-padding-top--xs.s-padding-bottom--xs.s-cells
+      .s-cell
+        .s-text-semibold-size--xs-caps-nowrap Follow us
+      .s-cell.s-expand.s-items-spacing--s.s-text-size--l.s-align-right
+        a.s-comment.icon-facebook(href='javascript:void(0)')
+        a.s-comment.icon-twitter(href='javascript:void(0)')
+      //- .s-padding--s.s-hide
+      //-   a.s-shape-rounded.s-effect-warning.s-padding--xs.s-block(href='javascript:void(0)') #[span.icon-bell.s-margin-right--xs]3 notifications
+      //- nav.s-border-top-static.s-cells-justified
+      //-   .s-cell
+      //-     a.s-cells-spacing--xs.s-comment.s-width-auto.s-move-center(href='javascript:void(0)')
+      //-       span.s-cell #[span.icon-gear.s-text-size--l]
+      //-       span.s-cell.s-text-semibold-size--xs-caps Settings
+      //-   .s-cell.s-border-left-static
+      //-     a.s-cells-spacing--xs.s-comment.s-width-auto.s-move-center(href='javascript:void(0)')
+      //-       span.s-cell #[span.icon-logout.s-text-size--l]
+      //-       span.s-cell.s-text-semibold-size--xs-caps Log Out

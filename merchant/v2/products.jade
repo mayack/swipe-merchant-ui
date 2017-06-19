@@ -1,0 +1,107 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Products';
+  - var pageClass = 'products';
+
+block content
+  header.s-cells.s-margin-bottom
+    .s-cell.s-expand
+      .s-items-spacing--s
+        a.s-button.s-swatch-aqua(href='products-edit') #[span.icon-plus-small-thick.s-margin-right--xs]Jauns Produkts
+    .s-cell.s-align-right
+      .fieldSearch.s-inputIcon-right
+        input.s-shape-pill(type='text' placeholder='Meklēt pēc klienta, produkta vai piezīmēm')
+        span.icon-search.s-comment
+  .productsGrid.s-row.s-grid-spacing--xs
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg(style='background-image:url(temp/iphone6s.jpg)')
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom Apple iPhone 5s 16GB Space Grey
+          .productsGridPrice.s-text-size--l 569.99 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg(style='background-image:url(temp/caterpillar-s60.jpg)')
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom CATerpillar CAT S60 Black
+          .productsGridPrice.s-text-size--l 569.99 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg(style='background-image:url(temp/leica.jpg)')
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom Leica C
+          .productsGridPrice.s-text-size--l 2,500.00 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg(style='background-image:url(temp/fridge-2.jpg)')
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom Samsung Family Hub™ Multi-door Fridge Freezer, 550L
+          .productsGridPrice.s-text-size--l 3499.99 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg(style='background-image:url(temp/macbook.jpg)')
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom Apple Macbook 13" Gold 256GB SSD
+          .productsGridPrice.s-text-size--l 799.99 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit
+    .prodcutsGridBox.s-col-4
+      .boxActive.s-box.s-border-active.s-padding--none
+        figure.s-shape-rounded-top.s-overflow.s-relative.s-margin--none
+          .productsGridBoxBg.s-swatch-stone
+            span.icon-box.s-text-size--9xl.s-comment
+          .productsGridBoxShare
+            h5 Post to
+            .s-items-spacing--s.s-text-baseline--single-size--xxl
+              a.icon-facebook.s-shape-circle.s-padding--xs.fill-facebook.tempTooltip(href='javascript:void(0)')
+              a.icon-twitter.s-shape-circle.s-padding--xs.fill-twitter.tempTooltip(href='javascript:void(0)')
+              a.icon-link.s-shape-circle.s-padding--xs.s-swatch-aqua.tempTooltip(href='javascript:void(0)')
+        .productsGridBoxText.s-padding.s-padding-top--s.s-padding-bottom--s
+          h5.s-margin-bottom Empty Product
+          .productsGridPrice.s-text-size--l 1,499.99 €
+        footer.s-align-center.s-text-caps.s-border-top-disabled
+          a.s-shape-rounded-bottom.s-swatch-default.s-padding--s.s-block(href='javascript:void(0)') #[span.icon-gear.s-margin-right--xs]Edit

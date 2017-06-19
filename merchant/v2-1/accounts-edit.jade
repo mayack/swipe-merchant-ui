@@ -1,0 +1,43 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Edit account';
+  - var pageClass = 'accounts';
+
+block content
+  header.s-cells-spacing--s.s-margin-bottom
+    .s-cell
+      a.icon-angle-left.s-text-size--3xl(href='clients')
+    .s-cell.s-text-nowrap-size--3xl
+      = pageTitle
+    .s-cell.s-expand.s-align-right
+  .s-box.s-padding--l.s-margin-bottom
+    h4.s-margin-bottom Basic information
+    .s-lister-spacing
+      section.s-items-spacingVertical--s
+        .s-cells-spacing--s
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Email address
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Title
+            input.s-expand(type='text')
+        .s-cells-spacing--s
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block First name
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Last name
+            input.s-expand(type='text')
+  footer.formFooter.s-swatch-stone.s-border-top-static
+    .s-wrapper
+      .s-cells
+        .s-cell.s-text-nowrap.s-text-size--l.s-expand
+          a.s-cells-spacing--xs.s-comment.s-width-auto(href='javascript:void(0)')
+            span.s-cell #[span.icon-trash.s-text-size--l]
+            span.s-cell.s-text-semibold-size--xs-caps.s-expand Delete Account
+        .s-cell.s-text-nowrap
+          nav.s-text-nowrap.s-items-spacing--xs
+            a.s-button.s-swatch-stone(href='javascript:void(0)') Cancel
+            a.s-button.s-swatch-aqua(href='javascript:void(0)') Save Changes
+  .formFooterGap

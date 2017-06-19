@@ -1,0 +1,43 @@
+block page
+  - var pageClass = 'login'; //default
+
+block page
+  - var pageTitle = 'Edit account';
+  - var pageClass = 'accounts-edit';
+
+doctype html
+<!--[if lt IE 7]<html lang="en" class="oldie lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="en" class="oldie lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="oldie lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+html
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    <!--[if IE]><!-->
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    <!--<![endif]-->
+    meta(name='description', content='')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Swipe Gateway / Merchant v2.0
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet")
+    link(rel='stylesheet', href='css/merchant.css')
+  body(class='page-front page-#{pageClass}')
+    section.notificationBar--success
+      .s-text-size--l.s-align-center.s-padding
+        | This is a #[span.s-text-semibold .notificationBar] message. Few actions you can do:
+        span.s-items-spacing--s.s-margin-left
+          a(href='javascript:void(0)' onclick='$(this).parents("[class*=notificationBar]").attr("class", "notificationBar--info")') Info
+          a(href='javascript:void(0)' onclick='$(this).parents("[class*=notificationBar]").attr("class", "notificationBar--success")') Success
+          a(href='javascript:void(0)' onclick='$(this).parents("[class*=notificationBar]").attr("class", "notificationBar--warning")') Warning
+          a(href='javascript:void(0)' onclick='$(this).parents("[class*=notificationBar]").attr("class", "notificationBar--danger")') Error
+          a(href='javascript:void(0)' onclick='$(this).parent().parent().slideUp(300)') Kill me
+    .s-layout
+      .s-layoutRow.s-layoutExpand
+        .s-layout.s-layoutCell
+          .s-layoutColumn.s-layoutExpand.s-align-middle
+            a.goHome.s-text-size--l.s-comment(href='javascript:void(0)') #[span.icon-angle-left.s-margin-right--xs]Go to home page
+            main.s-padding-top.s-padding-bottom
+              .s-wrapper
+                block content
+    include scripts

@@ -1,0 +1,84 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Edit client';
+  - var pageClass = 'clients';
+
+block content
+  header.s-cells-spacing--s.s-margin-bottom
+    .s-cell
+      a.icon-angle-left.s-text-size--3xl(href='clients')
+    .s-cell.s-text-nowrap-size--3xl
+      = pageTitle
+    .s-cell.s-expand.s-align-right
+  .s-box.s-padding--l.s-margin-bottom
+    h4 Basic information
+    p Jānorāda klienta e-pasta adresi vai telefona numuru. Pārējo informāciju jūs varat aizpildīt paši vai pieprasīt norādīt rēķina apmaksas procesā.]
+    .s-lister-spacing
+      section.s-items-spacingVertical--s
+        .s-cells-spacing--s
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Email address
+            .s-inputIcon-right.s-block
+              input.s-expand(type='email')
+              span.icon-asterisk.s-swatch-aqua--text
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Phone number
+            .s-inputIcon-right.s-block
+              input.s-expand(type='tel')
+              span.icon-asterisk.s-swatch-aqua--text
+  .s-box.s-padding--l.s-margin-bottom.s-lister
+      section.s-items-spacingVertical--s
+        h4 Additional information
+        .s-cells-spacing--s-justified
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block First name
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Last name
+            input.s-expand(type='text')
+        .s-cells-spacing--s-justified
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Personal number
+            input.s-expand(type='text')
+          .s-cell
+      section.s-items-spacingVertical--s
+        h4 Company information
+        .s-cells-spacing--s-justified
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Brand's name
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Legal name
+            input.s-expand(type='text')
+        div
+          label.s-text-semibold.s-margin-bottom--xs.s-block Address
+          textarea.s-expand(rows='4')
+        .s-cells-spacing--s-justified
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Registration number
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block VAT number
+            input.s-expand(type='text')
+      section.s-items-spacingVertical--s
+        h4 Bank details
+        .s-cells-spacing--s-justified
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block IBAN
+            input.s-expand(type='text')
+          .s-cell
+            label.s-text-semibold.s-margin-bottom--xs.s-block Swift
+            input.s-expand(type='text')
+  footer.formFooter.s-swatch-stone.s-border-top-static
+    .s-wrapper
+      .s-cells
+        .s-cell.s-text-nowrap.s-text-size--l.s-expand
+          a.s-cells-spacing--xs.s-comment.s-width-auto(href='javascript:void(0)')
+            span.s-cell #[span.icon-trash.s-text-size--l]
+            span.s-cell.s-text-semibold-size--xs-caps.s-expand Delete Client
+        .s-cell.s-text-nowrap
+          nav.s-text-nowrap.s-items-spacing--xs
+            a.s-button.s-swatch-stone(href='javascript:void(0)') Cancel
+            a.s-button.s-swatch-aqua(href='javascript:void(0)') Save Changes
+  .formFooterGap

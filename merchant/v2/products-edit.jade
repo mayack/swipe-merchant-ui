@@ -1,0 +1,74 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Edit product';
+  - var pageClass = 'products';
+
+block content
+  header.s-cells-spacing--s.s-margin-bottom
+    .s-cell
+      a.icon-angle-left.s-text-size--3xl(href='products')
+    .s-cell.s-text-nowrap-size--3xl
+      = pageTitle
+    .s-cell.s-expand.s-align-right
+  .s-items-spacingVertical
+    .s-box.s-padding--l
+      h4.s-margin-bottom--l Basic information
+      //- p Jānorāda klienta e-pasta adresi vai telefona numuru. Pārējo informāciju jūs varat aizpildīt paši vai pieprasīt norādīt rēķina apmaksas procesā.]
+      .s-lister-spacing
+        section.s-items-spacingVertical--s
+          .s-cells-spacing--s
+            .s-cell.s-expand
+              label.s-text-semibold.s-margin-bottom--xs.s-block Title
+              input.s-expand(type='text')
+            .s-cell
+              label.s-text-semibold.s-margin-bottom--xs.s-block Currency
+              select.fieldProductsCurrency
+                option USD
+                option EUR
+                option GBP
+            .s-cell
+              label.s-text-semibold.s-margin-bottom--xs.s-block Price
+              input.fieldProductsPrice(type='text')
+    .s-box.s-padding--l
+      h4.s-margin-bottom--l Image gallery
+      .imageGallery.s-row.s-grid-spacing--s
+        .s-col-4
+          a.imageGalleryAdd.s-padding--none.s-relative.s-margin--none.s-swatch-aqua.s-border-outline.s-button.s-block(href='#')
+            figure.s-filler.s-margin--none
+              span.s-cells
+                span.s-cell.s-align-center
+                  span.icon-plus.s-align-center.s-text-size--6xl.s-margin-bottom--s.s-block
+                  span.s-text-size--s-semibold-caps.s-block Add an image
+        .s-col-4
+          figure.s-box.s-background-cover.s-margin--none.s-padding--none.s-overflow.s-relative(style='background-image:url(temp/macbook.jpg)')
+            a.imageGalleryRemove.icon-close.s-swatch-coal.s-shape-circle.s-text-baseline--single-size--s(href='javascript:void(0)')
+            a.imageGalleryFeature.s-button-spacing--xs.s-swatch-coal.s-shape-pill.s-text-size--xs-caps-semibold.active(href='javascript:void(0)') Featured
+        .s-col-4
+          figure.s-box.s-background-cover.s-margin--none.s-padding--none.s-overflow.s-relative(style='background-image:url(temp/leica.jpg)')
+            a.imageGalleryRemove.icon-close.s-swatch-coal.s-shape-circle.s-text-baseline--single-size--s(href='javascript:void(0)')
+            a.imageGalleryFeature.s-button-spacing--xs.s-swatch-coal.s-shape-pill.s-text-size--xs-caps-semibold(href='javascript:void(0)') Make Featured
+        .s-col-4
+          figure.s-box.s-background-cover.s-margin--none.s-padding--none.s-overflow.s-relative(style='background-image:url(temp/dji.jpg)')
+            a.imageGalleryRemove.icon-close.s-swatch-coal.s-shape-circle.s-text-baseline--single-size--s(href='javascript:void(0)')
+            a.imageGalleryFeature.s-button-spacing--xs.s-swatch-coal.s-shape-pill.s-text-size--xs-caps-semibold(href='javascript:void(0)') Сделать Главной
+        .s-col-4
+          figure.s-box.s-background-cover.s-margin--none.s-padding--none.s-overflow.s-relative(style='background-image:url(temp/caterpillar-s60.jpg)')
+            a.imageGalleryRemove.icon-close.s-swatch-coal.s-shape-circle.s-text-baseline--single-size--s(href='javascript:void(0)')
+            a.imageGalleryFeature.s-button-spacing--xs.s-swatch-coal.s-shape-pill.s-text-size--xs-caps-semibold(href='javascript:void(0)') Make Featured
+        .s-col-4
+          figure.s-box.s-background-cover.s-margin--none.s-padding--none.s-overflow.s-relative(style='background-image:url(temp/iphone7.png)')
+            a.imageGalleryRemove.icon-close.s-swatch-coal.s-shape-circle.s-text-baseline--single-size--s(href='javascript:void(0)')
+            a.imageGalleryFeature.s-button-spacing--xs.s-swatch-coal.s-shape-pill.s-text-size--xs-caps-semibold(href='javascript:void(0)') Make Featured
+  footer.formFooter.s-swatch-stone.s-border-top-static
+    .s-wrapper
+      .s-cells
+        .s-cell.s-text-nowrap.s-text-size--l.s-expand
+          a.s-cells-spacing--xs.s-comment.s-padding-top--s.s-padding-bottom--s.s-width-auto(href='javascript:void(0)')
+            span.s-cell #[span.icon-trash.s-text-size--l]
+            span.s-cell.s-text-semibold-size--xs-caps Delete Product
+        .s-cell.s-text-nowrap
+          nav.s-text-nowrap.s-items-spacing--xs
+            a.s-button.s-swatch-stone(href='javascript:void(0)') Cancel
+            a.s-button.s-swatch-aqua(href='javascript:void(0)') Save Changes
+  .formFooterGap

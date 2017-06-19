@@ -1,0 +1,36 @@
+extend includes/page-front
+
+block page
+  - var pageTitle = 'Sign up';
+  - var pageClass = 'signup';
+
+block content
+  .s-row
+    .s-col-5.s-move-center
+      header.s-margin-bottom--l.s-align-center
+        .s-text-baseline--single.s-block
+          img(src='images/logo-aqua.svg' width='120')
+        h1 Welcome to Swipe!
+        p.s-text-size--xl.s-comment Get started with your free account.
+      form.s-box.s-padding--l.s-margin-bottom--l
+        fieldset.s-items-spacingVertical--s.s-margin-bottom
+          div
+            label.s-text-semibold.s-margin-bottom--xs.s-block E-mail address
+            input.s-expand(type='text')
+          div
+            label.s-text-semibold.s-margin-bottom--xs.s-block Password
+            .s-inputIcon-right.s-expand
+              input.s-expand(type='password')
+              a.icon-eye-open.s-text-size--xl.show-password(href='javascript:void(0)')
+        footer.s-margin-bottom--s
+          button.s-button.s-swatch-aqua.s-expand.s-text-size--l.s-cells
+              span.s-cell.s-expand.s-align-left
+                | Sign up
+              span.s-cell
+                span.icon-angle-right-thick
+        p.s-comment.s-align-center By clicking this button I confim that I have read and accept #[a.s-comment.s-text-semibold(href='javascript:void(0)') Terms of Service].
+      .s-items-spacingVertical--xs.s-align-center.s-text-size--l
+        div
+          a(href='login') Already have a Swipe account?
+        //- div
+        //-   a(href='javascript:void(0)') Forgot password?

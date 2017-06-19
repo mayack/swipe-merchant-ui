@@ -1,0 +1,193 @@
+extend includes/page
+
+block page
+  -var pageTitle = 'Timeline';
+  -var pageClass = 'timeline';
+
+block content
+  .s-layoutColumn.s-layoutExpand
+    main.s-padding-top.s-padding-bottom
+      .s-wrapper
+        header.s-margin-bottom
+          .s-cells
+            .s-cell.s-expand
+              .s-items-spacing--s
+                button.s-button.s-swatch-stone #[span.icon-controls.s-margin-right--xs]Filtrēt
+                button.s-button.s-swatch-stone #[span.icon-circle-arrow-south.s-margin-right--xs]Lejupielādēt atskaiti
+            .s-cell.s-align-right
+              .input-search.s-inputIcon-right
+                input.s-shape-pill(type='text' placeholder='Meklēt pēc klienta, produkta vai piezīmēm')
+                span.icon-search.s-comment
+        .s-items-spacingVertical--xs
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Viewed
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Sent
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 605,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-success.s-text-size--s-semibold Paid
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-danger.s-text-size--s-semibold Denied
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Viewed
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Sent
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 605,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-success.s-text-size--s-semibold Paid
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-danger.s-text-size--s-semibold Denied
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Viewed
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Sent
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 605,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-success.s-text-size--s-semibold Paid
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+          .s-box.s-border-active.s-padding--s.s-padding-left
+            .s-cells-spacing--l
+              .s-cell
+                | 10.04.2017
+                .s-comment.s-text-size--s 17:12
+              .s-cell.s-expand
+                a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+                .s-comment.s-text-size--s #MA5
+              .s-cell.s-text-nowrap-semibold 15,72 €
+              .s-cell 
+                span.status.s-label.s-shape-pill.s-effect-danger.s-text-size--s-semibold Denied
+              .s-cell.s-padding-left--none
+                a.actions-trigger.icon-dots.s-comment.s-text-size--l-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    #timeline-actions.popover-actions.s-popover-top-right.s-box.s-hide.s-border-overlay.s-padding--none
+      .s-popoverArrow
+      ul.s-lister-spacing--none.s-list-nobullets.s-shape-rounded.s-overflow
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="javascript:void(0)") Apskatīt
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="javascript:void(0)") Rediģēt
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="/contacts-edit") Drukāt
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="/contacts-edit") Izveidot kopiju
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="/contacts-edit") Lejupielādēt
+        li
+          a.s-swatch-default.s-padding-top--xs.s-padding-bottom--xs.s-padding--s.s-block(href="javascript:void(0)") 
+            span.s-effect-danger--text Izdzēst

@@ -1,0 +1,43 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Edit key set';
+  - var pageClass = 'api';
+
+block content
+  include includes/form-header
+  form.s-lister-spacing--l
+    fieldset.s-cells-spacing--l
+      .s-cell.s-expand
+        label.s-text-semibold.s-margin-bottom--xs.s-block Key Set Title
+        input.s-expand(type='text')
+      .s-cell.s-text-nowrap
+        label.s-text-semibold.s-margin-bottom--xs.s-block.s-invisible &nbsp;
+        .s-cells-spacing--s.s-inputLabel
+          .s-cell
+            .toggler.s-text-size--l
+              input(type='checkbox' id='toggler')
+              label(for='toggler')
+          .s-cell.s-expand
+            label.s-text-semibold(for='toggler') Test key set
+    fieldset
+      h3.s-margin-bottom Keys
+      .s-items-spacingVertical
+        div
+          label.s-text-semibold.s-margin-bottom--xs.s-block Public key
+          input.s-expand(type='text')
+        div
+          label.s-text-semibold.s-margin-bottom--xs.s-block Private key
+          input.s-expand(type='text')
+  footer.formFooter.s-swatch-default.s-border-top-static.barWidth
+    .s-wrapper
+      .s-cells
+        .s-cell.s-text-nowrap.s-text-size--l.s-expand
+          a.s-cells-spacing--xs.s-comment.s-width-auto(href='javascript:void(0)')
+            span.s-cell #[span.icon-trash.s-text-size--l]
+            span.s-cell.s-text-semibold-size--xs-caps.s-expand Delete Key Set
+        .s-cell.s-text-nowrap
+          nav.s-text-nowrap.s-items-spacing--xs
+            a.s-button.s-swatch-stone(href='javascript:void(0)') Cancel
+            a.s-button.s-swatch-aqua(href='javascript:void(0)') Save Changes
+  .formFooterGap

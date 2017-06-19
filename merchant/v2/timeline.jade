@@ -1,0 +1,235 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'Timeline';
+  - var pageClass = 'timeline';
+
+block content
+  header.s-cells.s-margin-bottom  
+    .s-cell.s-expand
+      .s-items-spacing--s
+        button#timelineFilterTrigger.s-button.s-swatch-stone #[span.icon-controls-thick.s-margin-right--xs]Filtrēt
+        button#timelineExportTrigger.s-button.s-swatch-stone #[span.icon-circle-arrow-bottom-thick.s-margin-right--xs]Lejupielādēt atskaiti
+    .s-cell.s-align-right
+      .fieldSearch.s-inputIcon-right.s-swatch-stone
+        input.s-shape-pill.s-border-active(type='text' placeholder='Meklēt pēc klienta, produkta vai piezīmēm')
+        a.icon-search.s-comment(href='javascript:void(0)')
+  .s-items-spacingVertical--xs
+    a.newItems.s-effect-info.s-box.s-text-semibold-size--s-caps.s-block.s-padding--xs.s-align-center(href='javascript:void(0)') View 10 new transactions
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s.s-items-spacing--s
+          span #MA5
+          span #[span.icon-api]&nbsp;API
+          span.s-label.s-effect-warning--text #[span.icon-asterisk]&nbsp;Test
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell
+        span.paymentStatus.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Viewed
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Sent
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxBatch.boxExpandable.boxActive.s-box.s-border-active.s-padding--none
+      .boxExpandableHeader.s-cells-spacing--l.s-padding--s.s-padding-left.s-padding-right--s
+        .s-cell
+          | 10.04.2017
+          .s-comment.s-text-size--s 17:12
+        .s-cell.s-expand
+          .s-text-semibold Перечислены 3 платежа
+          .s-text-size--s.s-items-spacing--s.s-comment
+            //- span
+            //-   | 18.04.2017 на банковский счет оканчивающийся&nbsp;
+            //-   span.s-text-semibold на 6917
+            span #SWIPE146
+        .s-cell.s-text-nowrap.s-items-spacing
+          span Всего #[span.s-text-semibold 17.92 €]
+        .s-cell
+          span.paymentStatus.s-label.s-shape-pill.s-effect-info.s-text-size--s-semibold.s-border-dotted Batch
+        .s-cell.s-padding-left--none
+          //- Выписка и настройки будут в поповере
+          a.icon-angle-bottom.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+      .boxExpandableFooter.s-lister-spacing--s.s-padding.s-padding-top--s.s-padding-bottom--s.s-border-top-static(style='display:none')
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      //- .s-cell.s-comment.s-text-nowrap
+      //-   a.underlined.s-comment(href='javascript:void(0)') Ожидается 20.00 €
+      .s-cell.s-text-nowrap-semibold.s-align-right
+        div 605,72 €
+        a.underlined.s-comment.s-text-regular-size--s(href='javascript:void(0)') Ожидается 20.00 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-success.s-text-size--s-semibold Paid
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-danger.s-text-size--s-semibold Denied
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxFee.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        span.s-text-semibold Комиссия за вывод средств
+        .s-comment.s-text-size--s #SWIPE123
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell
+        span.paymentStatus.s-label.s-shape-pill.s-effect-warning.s-text-size--s-semibold.s-border-dotted Комиссия
+      .s-cell.s-padding-left--none.s-invisible
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxBatch.boxExpandable.boxActive.s-box.s-border-active.s-padding--none
+      .boxExpandableHeader.s-cells-spacing--l.s-padding--s.s-padding-left.s-padding-right--s
+        .s-cell
+          | 10.04.2017
+          .s-comment.s-text-size--s 17:12
+        .s-cell.s-expand
+          .s-text-semibold Перечислены 3 платежа
+          .s-text-size--s.s-items-spacing--s.s-comment
+            //- span
+            //-   | 18.04.2017 на банковский счет оканчивающийся&nbsp;
+            //-   span.s-text-semibold на 6917
+            span #SWIPE146
+        .s-cell.s-text-nowrap.s-items-spacing
+          span Всего #[span.s-text-semibold 17.92 €]
+        .s-cell
+          span.paymentStatus.s-label.s-shape-pill.s-effect-info.s-text-size--s-semibold.s-border-dotted Batch
+        .s-cell.s-padding-left--none
+          //- Выписка и настройки будут в поповере
+          a.icon-angle-bottom.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+      .boxExpandableFooter.s-lister-spacing--s.s-padding.s-padding-top--s.s-padding-bottom--s.s-border-top-static(style='display:none')
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+        .s-cells-spacing--l
+          .s-cell
+            | 10.04.2017
+          .s-cell
+            | #1492591029_720633
+          .s-cell.s-expand
+            | jmtsolutions@gmail.com
+          .s-cell.s-text-nowrap-semibold 15,72 €
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell
+        span.paymentStatus.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Viewed
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-neutral.s-text-size--s-semibold Sent
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 605,72 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-success.s-text-size--s-semibold Paid
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxFee.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        span.s-text-semibold Комиссия за вывод средств
+        .s-comment.s-text-size--s #SWIPE123
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell
+        span.paymentStatus.s-label.s-shape-pill.s-effect-warning.s-text-size--s-semibold.s-border-dotted Комиссия
+      .s-cell.s-padding-left--none.s-invisible
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+    .boxActive.s-box.s-border-active.s-padding--s.s-padding-left.s-cells-spacing--l
+      .s-cell
+        | 10.04.2017
+        .s-comment.s-text-size--s 17:12
+      .s-cell.s-expand
+        a.s-text-semibold(href='javascript:void(0)') spam@mayack.com
+        .s-comment.s-text-size--s #MA5
+      .s-cell.s-text-nowrap-semibold 15,72 €
+      .s-cell 
+        span.paymentStatus.s-label.s-shape-pill.s-effect-danger.s-text-size--s-semibold Denied
+      .s-cell.s-padding-left--none
+        a.actionsTrigger.icon-dots.s-comment.s-text-size--xl-baseline--single.s-padding--xs.s-shape-circle(href='javascript:void(0)')
+  include includes/row-actions
+  //- include includes/timeline-filters

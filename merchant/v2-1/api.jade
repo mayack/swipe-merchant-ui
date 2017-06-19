@@ -1,0 +1,87 @@
+extend includes/page
+
+block page
+  - var pageTitle = 'E-commerce & API';
+  - var pageClass = 'api';
+
+block content
+  .moduleBox.s-box.s-margin-bottom.s-swatch-aqua
+    .s-cells-spacing--l
+      .s-cell
+        .s-cells-spacing--xs.s-margin-bottom--xs
+          .s-cell #[span.icon-api.s-text-size--3xl]
+          .s-cell.s-expand #[h4 Free e-commerce modules]
+        p Download and setup in minutes free e-commerce modules for Prestashop, Magento, OpenCart, WooCommerce.
+      .s-cell
+        select.s-expand
+          option Magento
+          option Woo Commerce
+          option Opencart
+          option PrestaShop
+        button.s-expand.s-button.s-text-nowrap.s-swatch-default.s-border-outline.s-margin-top--xs Download Module
+  .s-cells-spacing-justified.s-margin-bottom
+    .s-cell
+      a.s-box.s-swatch-default(href='javascript:void(0)')
+        .s-cells-spacing.s-move-center.s-align-top
+          span.s-cell.s-text-baseline--single
+            img.s-move-center(src='images/api.svg' height='60')
+          span.s-cell.s-align-left.s-expand
+            span.s-text-baseline--single-semibold.s-block.s-margin-bottom--xs(href='javascript:void(0)') Explore API#[span.icon-angle-right-thick.s-margin-left--xs]
+            span.s-comment.s-text-size--s Lorem ipsum dolor sit amet, consectetur adipisicing elit. Istinctio autem numquam culpa neque placeat.
+    .s-cell
+      a.s-box.s-swatch-default(href='javascript:void(0)')
+        .s-cells-spacing.s-move-center.s-align-top
+          span.s-cell
+            img.s-move-center(src='images/payment.svg' height='60')
+          span.s-cell.s-expand
+            span.s-text-baseline--single-semibold.s-block.s-margin-bottom--xs(href='javascript:void(0)') Preview payment page#[span.icon-angle-right-thick.s-margin-left--xs]
+            span.s-comment.s-text-size--s Lorem ipsum dolor sit amet, consectetur adipisicing elit. Istinctio autem numquam culpa neque placeat.
+  .s-cells-spacing-justified
+    .s-cell
+      .s-box
+        header.s-margin-bottom.s-cells.s-expand
+          .s-cell.s-expand
+            h4 Keys sets
+          .s-cell
+            a.s-button.s-swatch-aqua.s-border-outline.s-text-size--s(href='api-keys') #[span.icon-plus-small-thick.s-margin-right--xs]Add
+        ul.s-lister-spacing--s.s-list-nobullets
+          li.s-cells
+            .s-cell.s-text-semibold Some key set name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some key set name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some key set name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some key set name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+    .s-cell
+      .s-box
+        header.s-margin-bottom.s-cells.s-expand
+          .s-cell.s-expand
+            h4 Webhooks
+          .s-cell
+            a.s-button.s-swatch-aqua.s-border-outline.s-text-size--s(href='api-hooks') #[span.icon-plus-small-thick.s-margin-right--xs]Add
+        ul.s-lister-spacing--s.s-list-nobullets
+          li.s-cells
+            .s-cell.s-text-semibold Some webhook name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some webhook name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some webhook name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')
+          li.s-cells
+            .s-cell.s-text-semibold Some webhook name
+            .s-cell.s-align-right
+              a.icon-pencil.s-comment(href='javascript:void(0)')

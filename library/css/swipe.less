@@ -1,0 +1,856 @@
+// ==========================================================
+// Includes
+// ==========================================================
+
+
+@import 'less/stoked.less';
+@import 'less/jqueryui.less';
+// @import 'fonts.less';
+
+
+
+// ==========================================================
+// Typography
+// ==========================================================
+
+
+@bodyFamily:           "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+@bodySize:             0.8125rem;
+@bodyBaseline:         1.414;
+
+@headingCase:          none;
+@headingFamily:        "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+@headingWeight:        400;
+@headingBaseline:      1.2;
+
+@fontScatter:          0.6;
+
+
+
+// ==========================================================
+// Swatches & Effects
+// ==========================================================
+
+
+// Variables
+
+@swatchAqua:           #00C1C7;
+@swatchMint:           #44AF69;
+@swatchOrange:         #F49D37;
+@swatchPeach:          #E4572E;
+
+@swatchBlue:           #4BA3C3;
+@swatchViolet:         #52489C;
+@swatchBrass:          #BFAE48;
+
+@swatchWhite:          #FFFFFF;   // B: 100%
+
+@swatchSnow:           #F7FAFA;   // B: 98%
+@swatchStone:          #F2F5F5;   // B: 96%
+
+@swatchLightGray:      #DFE6E6;   // B: 90%
+@swatchGray:           #CED9D9;   // B: 85%
+@swatchDarkGray:       #BCC6C6;   // B: 80%
+
+@swatchLightSilver:    #A7B4B4;   // B: 70%
+@swatchSilver:         #869898;   // B: 60%
+@swatchDarkSilver:     #7A8B8B;   // B: 55%
+
+@swatchCloud:          #617373;   // B: 45%
+@swatchAsh:            #3F5555;   // B: 33%
+@swatchCoal:           #212626;   // B: 15%
+
+
+
+// Swatches
+
+.createSwatch(
+    @name:             default,
+    @fill:             @swatchWhite,
+    @heading:          @swatchAsh,
+    @text:             @swatchAsh,
+    @link:             @swatchAqua,
+    @linkHover:        darken(@swatchAqua, 10%),
+    @comment:          @swatchSilver,
+    @borderIntensity:  5%,
+    @borderDisabled:   @swatchStone,
+    @border:           @swatchLightGray,
+    @borderActive:     @swatchGray,
+    @borderOverlay:    darken(@swatchGray, 10%),
+    @jQueryUI:         true,
+    @customStyles:     {
+      &.s-box:not([class*='s-border-outline']):not([class*='s-effect']), &[class*='s-button']:not([class*='outline']), &.fieldSearch:not(.expanded) input:not([type=submit]):not([type=button]):not([type=radio]):not([type=file]):not([type=checkbox]):not(:focus) {
+        box-shadow: @boxShadow;
+      }
+      a.s-comment:not([class*="s-button"]):not([class*="s-swatch"]):hover,
+      .s-swatch-default a.s-comment:not([class*="s-button"]):not([class*="s-swatch"]):hover {
+        color: @swatchAsh;
+      }
+      .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple, .atk-inputOption .atk-box, .check-in-box .atk-box, .toggler label, .avatarbox {
+          border-color: @borderActive;
+      }
+      .select2-dropdown {
+        border-color: @borderOverlay;
+      }
+      &.boxBatch:after {
+        box-shadow: @boxShadow;
+        border: 1px solid @borderActive;
+      }
+      a:not([class*="s-button"]):not([class*="s-swatch"]).active {
+        color: @linkHover;
+      }
+    }
+);
+.createSwatch(
+    @name:             stone,
+    @fill:             @swatchStone,
+    @borderIntensity:  4%,
+    @buttonText:       @swatchCloud,
+    @comment:          @swatchDarkSilver,
+    @link:             @swatchAqua,
+    @text:             @swatchCloud,
+    @customStyles:     {
+      &[class*='s-button'] {
+        box-shadow: 0 1px 1px fade(@swatchCoal, 7%);
+        &.active {
+          &, &:hover {
+            background-color: @swatchSilver;
+            box-shadow: 0 1px 2px darken(@swatchSilver, 10%) inset;
+            border-color: darken(@swatchSilver, 10%);
+            color: @swatchWhite;
+          }
+        }
+      }
+    }
+);
+.createSwatch(
+    @name:             silver,
+    @fill:             @swatchSilver
+);
+.createSwatch(
+    @name:             coal,
+    @fill:             @swatchCoal,
+    @text:             @swatchWhite,
+    @heading:          @swatchWhite,
+    @borderDisabled:   fade(@swatchWhite, 5%),
+    @border:           fade(@swatchWhite, 10%),
+    @borderActive:     fade(@swatchWhite, 15%),
+    @borderOverlay:    @swatchCoal,
+    @customStyles:     {
+      &.s-box {
+        border-color: @swatchCoal;
+      }
+      &[class*='s-popover'] {
+        &, .s-popoverArrow:before {
+          background-color: @tooltipColor !important;
+          border: none !important;
+        }
+      }
+    }
+);
+.createSwatch(
+    @name:             aqua,
+    @fill:             @swatchAqua,
+    @heading:          @swatchWhite,
+    @text:             @swatchWhite,
+    @borderIntensity:  1%,
+    @hoverIntensity:   2%,
+    @customStyles:     {
+      &.s-box:not([class*='s-border'][class*='outline']), &[class*='s-button']:not([class*='outline']) {
+        box-shadow: 0 1px 1px fade(@swatchCoal, 7%);
+      }
+    }
+);
+
+
+// Effects
+
+.createEffect(
+    @name:             info,
+    @color:            @swatchAqua,
+    @tint:             93%,
+    @customStyles:     {
+      &.paymentStatus {
+        background: none;
+        border: 1px solid @color;
+      }
+    }
+);
+.createEffect(
+    @name:             success,
+    @color:            @swatchMint,
+    @customStyles:     {
+      &.paymentStatus {
+        background: none;
+        border: 1px solid @color;
+      }
+    }
+);
+.createEffect(
+    @name:             neutral,
+    @color:            @swatchSilver,
+    @customStyles:     {
+      &.paymentStatus {
+        background: none;
+        border: 1px solid @color;
+      }
+    }
+);
+.createEffect(
+    @name:             warning,
+    @color:            @swatchOrange,
+    @tint:             90%,
+    @customStyles:     {
+      &.paymentStatus {
+        background: none;
+        border: 1px solid @color;
+      }
+    }
+);
+.createEffect(
+    @name:             danger,
+    @color:            @swatchPeach,
+    @customStyles:     {
+      &.paymentStatus {
+        background: none;
+        border: 1px solid @color;
+      }
+    }
+);
+
+
+
+// ==========================================================
+// Styles & Colors
+// ==========================================================
+
+
+@bodyBackground:       @swatchWhite;
+@cornerRadius:         4px;
+@textSelect:           @swatchAqua;
+@dialogOverlay:        fade(@swatchCoal, 90%);
+@tooltipColor:         fade(@swatchCoal, 95%);
+@popoverArrow:         12px;
+@buttonPadding:        0.65em;
+@buttonPaddingRatio:   2;
+@spaceRatio:           1.5;
+
+@inputColor:           @swatchWhite;
+@inputText:            @swatchCoal;
+@inputFocus:           @swatchAqua;
+@inputFocusGlow:       3px;
+@inputPadding:         0.65em;
+@inputPaddingRatio:    3;
+@inputPlaceholder:     @swatchSilver;
+@inputInnerShadow:     0 3px 0 rgba(0, 0, 0, 0.03) inset;
+
+
+
+// ==========================================================
+// Custom
+// ==========================================================
+
+
+// Additional Variables
+
+@boxShadow:      0 1px 1px fade(@swatchCoal, 7%);
+@floatingShadow: 0 10px 25px fade(@swatchCoal, 20%) !important;
+
+
+// Typography
+
+@font-face {
+    font-family: 'Proxima Nova Semibold';
+    src: url('../fonts/proximanova-semibold.woff2') format('woff2'),
+         url('../fonts/proximanova-semibold.woff') format('woff'),
+         url('../fonts/proximanova-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('../fonts/proximanova-bold.woff2') format('woff2'),
+         url('../fonts/proximanova-bold.woff') format('woff'),
+         url('../fonts/proximanova-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('proximanova-reg.woff2') format('woff2'),
+         url('proximanova-reg.woff') format('woff'),
+         url('proximanova-reg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-pnregular {
+  font-family: "Proxima Nova", "Proxima Nova Regular", "Helvetica Neue", "Helvetica", sans-serif;
+}
+.font-pnsemibold {
+  font-family: "Proxima Nova", "Proxima Nova Semibold", "Helvetica Neue", "Helvetica", sans-serif;
+}
+.font-pnbold {
+  font-family: "Proxima Nova", "Proxima Nova Bold", "Helvetica Neue", "Helvetica", sans-serif;
+}
+h4, h5, h6 {
+  // .font-pnbold;
+  font-weight: 700;
+}
+a[class*='s-button'], button[class*='s-button'],
+input[class*='s-button'], a.ui-button, button.ui-button, input.ui-button {
+  // .font-pnsemibold;
+  font-weight: 600;
+}
+
+
+// Styling
+
+.createFill(@color, @contrast:5%) {
+  &, a&[class*="s-button"] {
+    background-color: @color;
+    border-color: darken(@color, @contrast);
+    color: #fff !important;
+    &:hover {
+      background-color: darken(@color, @contrast);
+      border-color: darken(@color, @contrast*2);
+    }
+  }
+  &[class*='border'][class*='outline'] {
+    background: none;
+    border-color: @color;
+    color: @color !important;
+  }
+}
+.fill-facebook {
+  .createFill(#4080ff);
+}
+.fill-twitter {
+  .createFill(#1b95e0);
+}
+.fill-google {
+  .createFill(#d62d20);
+}
+h1 {
+  margin-bottom: @space-l;
+}
+h2, h3 {
+  margin-bottom: @space;
+}
+label {
+  color: @swatchCloud;
+}
+[data-popover].s-shape-circle.active {
+  &, &.s-comment:not([class*="s-button"]):not([class*="s-swatch"]) {
+    background-color: @swatchStone;
+    color: @swatchCloud;
+  }
+}
+
+
+// Components
+
+.tempTooltip {
+  position: relative;
+  white-space: nowrap;
+  &:after {
+    .position(@b:100%, @l:50%, @z:50);
+    .translate(-50%, 0);
+    .text-size--s;
+    background: fade(@swatchCoal, 90%);
+    border-radius: @cornerRadius;
+    content: 'Temporary Tooltip';
+    color: #fff;
+    display: none;
+    margin-bottom: 5px;
+    padding: 0.25em 0.5em;
+  }
+  &:hover {
+    &:after {
+      display: block;
+    }
+  }
+}
+.loader() {
+  .animation(rotateEndlessly 1s infinite);
+  .border-radius(50%);
+  .transform(translateZ(0));
+  border-top: 0.2em solid rgba(255, 255, 255, 0.2);
+  border-right: 0.2em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.2em solid rgba(255, 255, 255, 0.2);
+  border-left: 0.2em solid #ffffff;
+  display: inline-block;
+  line-height: 1;
+  border-color: fade(@swatchAqua, 15%);
+  border-left-color: @swatchAqua;
+}
+[class*='loadMe'] {
+  min-height: 1em * @bodyBaseline;
+  position: relative;
+  &:after {
+    .loader;
+    .position(@t:auto, @l:50%, @b:auto, @z:61);
+    content: '';
+    height: 1em;
+    margin-left: -0.7em;
+    width: 1em;
+  }
+  &.s-box:before {
+    &:extend(.s-shape-rounded);
+    .position(@t:0, @l:0, @z:60);
+    background: @swatchWhite;
+    content: '';
+    height: 100%;
+    width: 100%;
+  }
+  &[class*='s-button'] {
+    color: transparent;
+    cursor: default;
+    position: relative;
+    pointer-events: none;    
+  }
+  &[class*='-overlay'] {
+    .position(fixed, @z:110);
+    .text-size--3xl;
+    background-color: @swatchWhite;
+    &:after {
+      margin-top: -0.7em;
+      top: 50%;
+    }
+  }
+}
+.feedbackBubbles {
+  .position(fixed, @b:@space, @r:@space, @z:100);
+  .feedbackBubblesMain {
+    .position(relative, @z:102);
+    .scale(1, 1);
+    .transition(all .2s);
+    background: fade(@swatchWhite, 95%);
+    box-shadow: 0 1px 1px fade(@swatchCoal, 20%), 0 5px 15px fade(@swatchCoal, 15%);
+    color: @swatchAqua;
+    &:before, &:after {
+      .transition(opacity .2s);
+    }
+    &:before {
+      .position(relative, @t:0em);
+      opacity: 1;
+    }
+    &:after {
+      .position(@t:50%, @l:50%);
+      .text-size--xl;
+      .translate(-50%, -50%);
+      &:extend(.icon-close-thin:before);
+      font-family: fontello;
+      margin-top: 0.1em;
+      opacity: 0;
+    }
+    &:active {
+      .scale(0.9,0.9);
+    }
+    
+  }
+  a {
+    border: none;
+    box-shadow: 0 1px 1px fade(@swatchCoal, 20%), 0 5px 15px fade(@swatchCoal, 10%);
+  }
+  .feedbackBubblesTiny {
+    display: none; // Specifically for Merchant UI
+    a {
+      .position(@t:50%, @l:50%, @z:101);
+      .transform(translate(-50%, -50%) scale(0,0));
+      .transition(all .2s);
+      box-shadow: 0 1px 1px fade(@swatchCoal, 15%), 0 5px 15px fade(@swatchCoal, 10%);
+      opacity: 0;
+      &:before {
+        .position(relative, @t:0.05em);
+      }
+      &.icon-phone:before, &.icon-mail:before {
+        // .position(relative, @t:0.075em);
+      }
+      &.icon-megaphone:before {
+        .position(relative, @t:-0.025em);
+      }
+    }
+  }
+  &.active {
+    .feedbackBubblesMain {
+      background-color: @swatchAqua;
+      box-shadow: 0 1px 1px fade(@swatchAqua, 15%), 0 5px 15px darken(fade(@swatchAqua, 15%), 5%);
+      color: #fff !important;
+      &:after, &:before {
+        .transition(opacity .1s);
+      }
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+      }
+      &:hover {
+        background: darken(@swatchAqua, 2%);
+      }
+    }
+    .feedbackBubblesTiny a {
+      // .translate(-225%, -60%);
+      // .scale(1,1);
+      .transform(translate(-225%, -60%) scale(1,1));
+      opacity: 1;
+      + a {
+        // .translate(-174%, -174%);
+        .transform(translate(-174%, -174%) scale(1,1));
+        -webkit-transition-delay: 0.05s; /* Safari */
+        transition-delay: 0.05s;
+      }
+      + a + a {
+        // .translate(-60%, -225%);
+        .transform(translate(-60%, -225%) scale(1,1));
+        -webkit-transition-delay: 0.1s; /* Safari */
+        transition-delay: 0.1s;
+      }
+    } 
+  }
+}
+.underlined {
+  border-bottom: 1px dotted lighten(@swatchSilver, 10%);
+  &:hover {
+    border-bottom-color: darken(@swatchSilver, 10%);
+  }
+}
+[class*="s-inputIcon"][class*="s-inputIcon-right"] [class*="icon"].show-password {
+  right: 0.65em;
+}
+.toggler {
+  line-height: 1;
+  input {
+    display: none;
+    &:checked + label {
+      background-color: @swatchAqua;
+      border-color: @swatchAqua;
+      &:before {
+        left: 0em;
+      }
+    } 
+  }
+  label {
+    @size: @bodyBaseline * 1em;
+    .border-radius(@size);
+    .transition(all .2s);
+    background-color: @swatchGray;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    height: @size;
+    position: relative;
+    width: @size * 2;
+    &:before {
+      .border-radius(50%);
+      .position(@t:0, @l:@size);
+      .scale(0.7, 0.7);
+      .transition(left .2s);
+      background: #fff;
+      content: '';
+      height: @size;
+      margin: -1px 0 0 -1px;
+      width: @size;
+    }
+  }
+}
+[class*='notificationBar'] {
+  color: @swatchWhite;
+  &[class*='--success'] {
+    background-color: @swatchMint;
+  }
+  &[class*='--info'] {
+    background-color: @swatchAqua;
+  }
+  &[class*='--warning'] {
+    background-color: @swatchOrange;
+  }
+  &[class*='--danger'] {
+    background-color: @swatchPeach;
+  }
+  a:not([class*="s-button"]):not([class*="s-swatch"]) {
+    color: @swatchWhite;
+    font-weight: 600;
+    &:hover {
+      // border-bottom: 1px solid @swatchWhite;
+      box-shadow: 0 1px 0 fade(@swatchWhite, 50%);
+    }
+  }
+}
+[class*='buttonIcon'] {
+  position: relative;
+  [class*='icon'] {
+    .translate(0, -50%);
+    position: absolute;
+    top: 50%;
+  }
+  &[class*='buttonIcon-left'] {
+    [class*='icon'] {
+      left: @space-xs;
+    }
+  }
+  &[class*='buttonIcon-right'] {
+    [class*='icon'] {
+      right: @space-xs; 
+    } 
+  }
+}
+
+
+// Adjustments
+
+a.s-swatch-default:not([class*="s-button"]):not([class*="--text"]):hover {
+  background-color: @swatchSnow;
+}
+.s-swatch-aqua .select2-container--default .select2-selection--single {
+  border-color: @swatchWhite;
+}
+.ui-front {
+  z-index: 90;
+}
+.ui-dialog {
+  background: @swatchSnow;
+  border: none;
+  overflow: inherit;
+  z-index: 91 !important;
+  &.dialog-minimal {
+    .ui-dialog-titlebar {
+      .position(relative, @z:2);
+      border: none;
+      padding: 0;
+      .ui-dialog-title {
+        display: none;
+      }
+      .ui-button.ui-dialog-titlebar-close {
+        .position(@t:@space-s, @r:@space-s);
+        color: @swatchGray;
+        cursor: pointer;
+        height: 1rem;
+        text-indent: 0;
+        width: 1rem;
+        .ui-icon:before {
+          &:extend(.icon-close:before);
+          .text-size--l;
+          cursor: pointer;
+          font-family: fontello;
+        }
+        &:hover {
+          color: darken(@swatchGray, 10%);
+        }
+      }
+    }
+    >.ui-dialog-content.ui-widget-content {
+      .position(relative, @z:1);
+      padding: @space-l;
+    }
+  }
+}
+[class*='s-shape-circle'].icon-twitter:before {
+  .position(relative, @t:0.05em);
+}
+[class*='s-shape-circle'].icon-chat-2:before {
+  .position(relative, @t:0.05em);
+}
+.icon-cancel:before {
+  &:extend(.icon-close:before);
+}
+.s-checkbox input:checked + label:before {
+  .scale(0.5, 0.5);
+  &:extend(.icon-ok-thick:before);
+}
+
+
+// Select2
+
+.select2-hidden-accessible {
+  max-width: 1px;
+}
+.select2 {
+  width: 100% !important;
+}
+.select2-dropdown, .ui-dialog, .ui-tooltip.ui-widget-content {
+  box-shadow: @floatingShadow;
+}
+.ui-tooltip.ui-widget-content {
+  max-width: 240px;
+  padding: @space-xs/2 @space-xs;
+  z-index: 9999;
+  opacity: 1 !important;
+}
+.select2-container--default {
+  .select2-dropdown.select2-dropdown--above {
+    .select2-results__option {
+      &:first-child {
+        &:extend(.s-shape-rounded-top);
+      }
+    }
+  }
+  .select2-dropdown.select2-dropdown--below {
+    .select2-results__option {
+      &:last-child {
+        &:extend(.s-shape-rounded-bottom);
+      }
+    }
+  }
+  .select2-results__option {
+    .text-ellipsis;
+    width: 100%;
+    color: @swatchAsh;
+    max-width: 100%;
+    padding: @inputPadding;
+    padding-right: 2em;
+    position: relative;
+    &[aria-selected=true] {
+      background: none;
+      color: @swatchAqua !important;
+      &:before {
+        &:extend(.icon-ok:before);
+        .box-sizing(content-box);
+        .position(@t:50%, @r:0.6em);
+        .translate(0, -50%);
+        .text-size--xxs;
+        font-family: fontello;
+      }
+    }
+  }
+  .select2-results__option--highlighted[aria-selected] {
+    background-color: fade(@swatchAqua, 5%);
+    color: @swatchCoal;
+    position: relative;
+  }
+  .select2-selection--single {
+    border-radius: @cornerRadius;
+    height: auto;
+    .select2-selection__rendered {
+      color: @swatchCoal;
+      line-height: @bodyBaseline;
+      padding: round(@inputPadding,1) round(@inputPadding*(4/@inputPaddingRatio),1);
+      padding-right: 2em;
+      text-align: left;
+      .select2-selection__placeholder {
+        color: @inputPlaceholder;
+      }
+    }
+    .select2-selection__arrow {
+      .position(@t:50%, @r:0.6em);
+      .translate(0, -50%);
+      line-height: 1;
+      height: auto;
+      width: auto;
+      b {
+        border: none;
+        color: @swatchSilver;
+        height: auto;
+        margin: 0;
+        position: static !important;
+        width: 100%;
+        &:after {
+          &:extend(.icon-angle-bottom:before);
+          font-family: fontello;
+        }
+      }
+    }
+  }
+  .select2-selection--multiple {
+    min-height: 0;
+    padding: @inputPadding;
+    padding-bottom: 0;
+    .select2-selection__rendered {
+      display: block;
+      padding: 0;
+      >li {
+        margin: @inputPadding;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      .select2-selection__choice {
+        background: @swatchStone;
+        border: none;
+        border-radius: @cornerRadius/2;
+        color: @swatchCloud;
+        padding: 0 @space-xs 0 0.2em;
+        .select2-selection__choice__remove {
+          margin: 0;
+          text-indent: -9999px;
+          position: relative;
+          width: 1em;
+          &:before {
+            &:extend(.icon-close:before);
+            .text-size--3xs;
+            .position(@t:50%, @l:50%);
+            .translate(-50%, -50%);
+            color: @swatchSilver;
+            font-family: 'fontello';
+            line-height: 1;
+            text-indent: 0;
+          }
+          &:hover:before {
+            color: @swatchSilver;
+          }
+        }
+      }
+      .select2-search--inline {
+        input:not([type=submit]):not([type=button]):not([type=radio]):not([type=file]):not([type=checkbox]):not([class*=s-padding--]):not([class*="s-padding "]) {
+          .border-radius(0);
+          .box-shadow(none);
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+  &.select2-container--open, &.select2-container--focus {
+    .select2-selection--single, .select2-selection--multiple {
+      border-color: @inputFocus;
+      box-shadow: 0 0 @inputFocusGlow @swatchAqua;
+    }
+  }
+  &.select2-container--disabled .select2-selection--single {
+    background: @swatchStone;
+  }
+}
+.select2-container--default.select2-container--open.select2-container--above ,
+.select2-container--default.select2-container--open.select2-container--below {
+  .select2-selection--multiple.hidden {
+    .border-radius(@cornerRadius);
+  }
+}
+
+
+// Animations
+
+.fromToSpinnerAnimation {
+  from 
+  {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -o-transform: rotate(0deg); /* Opera */
+    transform: rotate(0deg);
+  }
+  to 
+  {
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    -moz-transform: rotate(360deg); /* Firefox */
+    -o-transform: rotate(360deg); /* Opera */
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotateEndlessly {
+  .fromToSpinnerAnimation;
+}
+@-moz-keyframes rotateEndlessly {
+  .fromToSpinnerAnimation;
+}
+@-ms-keyframes rotateEndlessly {
+  .fromToSpinnerAnimation;
+}
+@-o-keyframes rotateEndlessly {
+  .fromToSpinnerAnimation;
+}
+@keyframes rotateEndlessly {
+  .fromToSpinnerAnimation;
+}
